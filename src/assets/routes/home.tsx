@@ -1,6 +1,12 @@
+import Context from "../components/auth/auth";
+
 const Home = () => {
     return ( <>
-    <h1>Головна сторінка</h1>
+    <Context.Consumer>
+        { ctx => ( <> <h1>Головна сторінка</h1>
+    <p>{ctx.name}</p> </> )}
+    </Context.Consumer>
+
     </> );
 }
  
