@@ -1,41 +1,43 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router";
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router'
 
 interface Book {
-    id: number
-    name: string
-
+  id: number
+  name: string
 }
 const Books = () => {
-     const [books, setBooks] = useState<Book[]>([])
+  const [books, setBooks] = useState<Book[]>([])
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchBooks = async () => {
-        try {
-         await fetch("https://jsonplaceholder.typicode.com/users").then(response => response.json()).then(data => {
+      try {
+        await fetch('https://jsonplaceholder.typicode.com/users')
+          .then((response) => response.json())
+          .then((data) => {
             console.log(data)
             setBooks(data)
           })
-        } catch(error) {
-            console.log(error)
-        }
+      } catch (error) {
+        console.log(error)
+      }
     }
     fetchBooks()
-    }, [])
+  }, [])
 
-    return ( <>
-    <h1>Всі книги</h1>
+  return (
+    <>
+      <h1>Всі книги</h1>
 
-    <ul>
+      <ul>
         {books.map((book) => (
-            <li key={book.id}>
-                {/* <h3>{name}</h3> */}
-                 <Link to={`/books/${book.id}`}>{book.name}</Link>
-            </li>
+          <li key={book.id}>
+            {/* <h3>{name}</h3> */}
+            <Link to={`/books/${book.id}`}>{book.name}</Link>
+          </li>
         ))}
-    </ul>
-    
-    </> );
+      </ul>
+    </>
+  )
 }
- 
-export default Books;
+
+export default Books

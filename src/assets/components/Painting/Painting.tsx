@@ -1,9 +1,9 @@
-import type { IPaintingProps } from './type';
+import type { IPaintingProps } from './type'
 
-import React from 'react';
+import React from 'react'
 
 interface IPaintingProps2 {
-  painting: IPaintingProps[];
+  painting: IPaintingProps[]
 }
 
 const Painting: React.FC<IPaintingProps2> = ({ painting }) => {
@@ -20,7 +20,7 @@ const Painting: React.FC<IPaintingProps2> = ({ painting }) => {
         ))}
       </ul>
     </>
-  );
-};
+  )
+}
 
-export default Painting;
+export default Painting

@@ -1,5 +1,5 @@
 export interface IPaintingProps {
-  name: string;
-  username: string;
-  email: string;
+  name: string
+  username: string
+  email: string
 }
