@@ -5,12 +5,16 @@ import UserMenu from './assets/components/userManu/userMenu.tsx'
 import './App.css'
 import routes from './assets/routes/routes'
 import AppBar from './assets/components/Painting/appBar/appBar'
+// import LoginPage from './assets/routes/login.tsx'
+// import RegisterPage from './assets/routes/register.tsx'
 
 const Home = lazy(() => import('./assets/routes/home.tsx'))
 const About = lazy(() => import('./assets/routes/about.tsx'))
 const Books = lazy(() => import('./assets/routes/books.tsx'))
 const BookId = lazy(() => import('./assets/routes/bookId.tsx'))
 const NotFound = lazy(() => import('./assets/routes/notfound.tsx'))
+const Login = lazy(() => import("./assets/routes/login.tsx"))
+const Register = lazy(() => import("./assets/routes/register.tsx"))
 
 interface User {
   name: string
@@ -67,6 +71,8 @@ function App() {
             <Route path={routes.about} element={<About />} />
             <Route path={routes.books} element={<Books />} />
             <Route path={routes.bookId} element={<BookId />} />
+            <Route path={routes.login} element={<Login />} />
+            <Route path={routes.register} element={<Register />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

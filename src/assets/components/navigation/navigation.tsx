@@ -27,6 +27,22 @@ const Navigation = () => {
           >
             Багато книг
           </NavLink>
+          <li>
+          <NavLink
+            to={routes.login}
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
+            Сторінка логін
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={routes.register}
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
+            Сторінка регістрації
+          </NavLink>
+        </li>
         </li>
       </ul>
     </>

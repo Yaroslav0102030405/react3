@@ -1,4 +1,5 @@
 import Context from '../components/auth/auth'
+import { Link } from 'react-router'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
           </>
         )}
       </Context.Consumer>
+      <Link to="/login">Силка на сторінку логін</Link>
     </>
   )
 }
